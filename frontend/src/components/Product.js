@@ -7,9 +7,11 @@ const Product = ({ product }) => {
             <a href={`/product/${product._id}`}>
                 <Card.Img variant='top' src={product.image} />
             </a>
-            <Card.Title as='div'>
-                <strong>{product.name}</strong>
-            </Card.Title>
+            <a href={`/product/${product._id}`}>
+                <Card.Title as='div'>
+                    <strong>{product.name}</strong>
+                </Card.Title>
+            </a>
             <Card.Text className='my-3' as='div'>
                 <Rating value={product.rating} text={`${product.numReviews} reviews`} />
             </Card.Text>
