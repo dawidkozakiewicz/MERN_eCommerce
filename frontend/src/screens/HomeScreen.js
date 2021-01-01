@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import products from '../products.js'
 import Product from '../components/Product'
+import axios from 'axios'
+
 const HomeScreen = () => {
+    const [products, setProducts] = useState([])
+
+    // useEffect(() => {
+    //     const FetchProducts = async () => {
+    //         const { data } = await axios.get('/api/products')
+    //         setProducts(data)
+    //     }
+    //     FetchProducts()
+    // }, [])
+
+    useEffect(() => {
+        const FetchProducts = async () => {
+            const res = await axios.get('/api/products')
+            setProducts(res.data)
+        }
+        FetchProducts()
+    }, [])
+
     return (
         <>
+            <h1>Latest Products</h1>
             <Row>
                 {products.map((product) => {
                     return (<Col sm={12} md={6} lg={4} xl={3}>
@@ -12,7 +32,6 @@ const HomeScreen = () => {
                     </Col>)
                 })}
             </Row>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ut ad quas. Officia nemo praesentium dolor alias modi, dignissimos pariatur, nostrum numquam molestias architecto, recusandae quas iure expedita dicta consequuntur.</h1>
         </>
     )
 }
