@@ -9,12 +9,12 @@ const users = [
     },
     {
         name: 'Joe Bidden',
-        email: 'admin@admin.pl',
+        email: 'JB@admin.pl',
         password: bcryptjs.hashSync('123456', 10)
     },
     {
         name: 'Donald Trump',
-        email: 'admin@admin.pl',
+        email: 'DT@admin.pl',
         password: bcryptjs.hashSync('123456', 10)
     },
 ]
