@@ -8,12 +8,14 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 
 const ProductScreen = ({ match, history }) => {
-  const [qty, setQty] = useState(0)
+  const [qty, setQty] = useState(1)
   console.log(qty)
   const dispatch = useDispatch()
 
   const productDetails = useSelector(state => state.productdetails)
   const { loading, error, product } = productDetails
+
+  console.log(product)
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
@@ -25,7 +27,7 @@ const ProductScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to={'/'} className='btn btn-light my-3'>
+      <Link to={'/'} name='btn btn-light my-3'>
         Go Back
       </Link>
       {loading ? (
