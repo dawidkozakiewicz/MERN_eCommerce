@@ -26,9 +26,9 @@ const CartScreen = ({ match, location, history }) => {
 
 
     return (
-        <div>
+        <Row md={8}>
             Cart
-        </div>
+        </Row>
     )
 }
 
