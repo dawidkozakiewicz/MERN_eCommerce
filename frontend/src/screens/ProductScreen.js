@@ -9,13 +9,12 @@ import Message from '../components/Message'
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1)
-  console.log(qty)
   const dispatch = useDispatch()
 
   const productDetails = useSelector(state => state.productdetails)
   const { loading, error, product } = productDetails
 
-  console.log(productDetails)
+  console.log(product.rating)
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
