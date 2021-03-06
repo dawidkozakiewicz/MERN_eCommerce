@@ -6,11 +6,13 @@ import {
   productDetailReducer,
 } from './reducers/productReducers.js'
 import { cartReducer } from './reducers/cartReducers'
+import { userLoginReducer } from './reducers/userReducers'
 
 const reducer = combineReducers({
   productList: productListReducer,
   productdetails: productDetailReducer,
   cart: cartReducer,
+  userLogin: userLoginReducer
 })
 
 const cartItemsFromLocalStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
