@@ -9,9 +9,15 @@ import { login } from '../actions/userActions'
 
 import React from 'react'
 
-const LoginScreen = () => {
+const LoginScreen = ({ location }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+    }
 
 
     return (
